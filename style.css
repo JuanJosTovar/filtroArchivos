@@ -212,7 +212,7 @@ body {
   
   .styled-table th,
   .styled-table td {
-    padding: 14px 18px;
+    padding: 14px 10px 14px 18px;
     text-align: left;
   }
   
@@ -238,4 +238,12 @@ body {
   
 .clear:hover {
     background-color: rgb(194, 2, 2);
+}
+
+.pdf-icon{
+    transition: color 0.3s ease;
+}
+
+.pdf-icon:hover{
+    color: #67b107;
 }
