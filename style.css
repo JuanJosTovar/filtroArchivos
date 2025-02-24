@@ -204,7 +204,6 @@ body {
   
   .styled-table thead tr th {
     color: #ffffff;
-    font-size: 18px;
   }
   
   .styled-table thead {
@@ -213,7 +212,7 @@ body {
   
   .styled-table th,
   .styled-table td {
-    padding: 14px 10px 14px 18px;
+    padding: 14px 1px 14px 18px;
     text-align: left;
   }
   
