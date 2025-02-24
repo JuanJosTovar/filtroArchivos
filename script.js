@@ -159,13 +159,15 @@ function displayRecords(records) {
     records.forEach(row => {
       const tr = document.createElement('tr');
       let manifiestosContent = "";
+      let irAlPdfContent = "";
       if (row["Manifiestos"]) {
-        manifiestosContent = `${row["Manifiestos"]}
-          <svg class="pdf-icon" data-manifiesto="${row["Manifiestos"]}" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" style="cursor:pointer;">
+        manifiestosContent = `${row["Manifiestos"]}`
+        irAlPdfContent = `<svg class="pdf-icon" data-manifiesto="${row["Manifiestos"]}" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" style="cursor:pointer;">
             <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"/>
           </svg>`;
       } else {
         manifiestosContent = "No se encuentra";
+        irAlPdfContent = "No hay manifiesto dentro del Excel";
       }
 
       tr.innerHTML = `
@@ -175,6 +177,7 @@ function displayRecords(records) {
         <td>${row["Proveedores "] || "Sin proveedor"}</td>
         <td>${row["REFERENCIA INTERNA"] || "Sin referencia interna"}</td>
         <td>${row["Ref de proveedores"] || "Sin referencia de proveedor"}</td>
+        <td>${irAlPdfContent}
       `;
       tableBody.appendChild(tr);
     });
